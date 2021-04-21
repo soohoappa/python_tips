@@ -5,7 +5,7 @@ import functools
 import multiprocessing as mp
 
 def preprocessing():
-
+    # code for preprocessing and return dataframe
     return df
 
 def split_list(list, n_split):
@@ -41,6 +41,8 @@ def main():
     unique_list = sorted(df['Student_ID'].unique())
 
     # multiproecssing
+    # set the number of cpu for multi_processing
+    # usually 2 less than full cpu
     df = parallel_dataframe(df, unique_list, multi_processing, mp.cpu_count())
 
 if __name__ == '__main__':
